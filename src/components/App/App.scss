@@ -1,0 +1,118 @@
+@use 'src/styles/reset';
+@use 'src/styles/vars';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+    // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    //   sans-serif;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+    font-family: 'Montserrat', 'Arial';
+    font-weight: 400;
+    display: flex;
+    width: 100%;
+  }
+
+
+  h1, h2 {
+    font-weight: 500;
+    font-size: 2em;
+  }
+  
+  em {
+    color: vars.$accentColor;
+  }
+  
+  h6 {
+    font-size: 0.8em;
+  }
+
+.landing-page-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .header-banner {
+        width: 100vw;
+        height: 10em;
+        background: vars.$landingBanner;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 2em;
+        padding-bottom: 1em;
+        &-fav {
+            height: 100px;
+            width: 110px;
+            left: 15%;
+          }
+        
+        &-msg {
+            height: 100px;
+            width: 110px;
+            right: 15%;
+        }
+    }
+
+    & .hero {
+        justify-content: space-around;
+        margin-bottom: 40%;
+        &-meeet {
+            height: 100px;
+            width: 100px;
+            filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.25));
+        }
+
+        &-right-arrow {
+            margin-top: 5em;
+            height: 44px;
+            width: 44px;
+        }
+    
+       & p {
+         font-size: 1.2em;
+         width: 75%;
+         text-align: center;
+       }
+      }
+      
+      .sign-up {
+        &-container {
+          margin-top: 3em;
+        }
+      
+        &-inputs {
+          display: flex;
+          flex-direction: column;
+          width: 270px;
+        
+          & input, button {
+            font-family: 'Montserrat', 'Arial';
+            margin-top: 20px;
+            width: 270px;
+            height: 40px;
+            border-radius: 30px;
+            border: none;
+          }
+        
+          & input {
+            background-color: vars.$inputColor;
+            padding-left: 10px;
+            font-weight: 400;
+            font-size: 1em;
+          }
+          
+          & button {
+            background-color: vars.$buttonColor;
+            font-weight: 600;
+            font-size: 1.1em;
+            color: white;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
+            margin-bottom: 10px;
+          }
+        }
+    }
+  }
