@@ -30,7 +30,6 @@ body {
 
 .landing-page-container {
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,15 +57,18 @@ body {
     }
 
     & .hero {
-        justify-content: space-around;
-        margin-bottom: 40%;
+        
         &-meeet {
-            height: 100px;
-            width: 100px;
-            filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.25));
+          margin-top: 2em;
+          height: 104px;
+          width: 104px;
+          filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.25));
         }
 
         &-info {
+          height: 30em;
+          justify-content: space-evenly;
+          
           &-right-arrow {
               margin-top: 5em;
               height: 44px;
@@ -83,9 +85,14 @@ body {
         }
 
       
-      .sign-up {
+      .sign-up, .sign-in {
         &-container {
-          margin-top: 3em;
+          margin: 3em 0;
+
+          & h2 {
+            text-align: center;
+            margin-bottom: 0.5em;
+          }
         }
       
         &-inputs {
@@ -115,8 +122,84 @@ body {
             font-size: 1.1em;
             color: white;
             box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
-            margin-bottom: 10px;
+            margin-bottom: 0.8em;
           }
         }
     }
+  }
+
+  @media screen and (max-width: 400px) {
+    .landing-page-container {
+      .header-banner {
+        display: none;
+      }
+
+      & .hero {
+        &-meeet {
+          height: 104px;
+          width: 104px;
+        }
+      }
+    } 
+  }
+
+  @media screen and (max-width: 320px) {
+    .landing-page-container {
+
+      & .hero {
+        &-meeet {
+          margin-top: 1em;
+          height: 104px;
+          width: 104px;
+        }
+      }
+    } 
+  }
+
+  @media screen and (min-width: 1200px) {
+    .landing-page-container {
+      .header-banner {
+        background: none;
+        height: 0;
+        &-fav {
+          position: absolute;
+          height: 130px;
+          width: 140px;
+          left: 15%;
+          top: 15%;
+        }
+      
+        &-msg {
+          position: absolute;
+          height: 130px;
+          width: 140px;
+          right: 15%;
+          top: 30%;
+        }
+      }
+
+      & .hero {
+        &-meeet {
+          height: 180px;
+          width: 180px;
+        }
+
+        &-info {
+          
+          &-right-arrow {
+              display: none;
+          }
+      
+        & p {
+            width: 55%;
+          }
+        }
+        
+        .sign-up {
+          &-container {
+            display: inline;
+          }
+        }
+      }  
+    } 
   }

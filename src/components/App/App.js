@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import './App.scss';
-import SignUp from '../SignUp/SignUp';
 
 import favimg from '../../assets/fav-img.png';
 import msgimg from '../../assets/msg-img.png';
@@ -38,10 +37,10 @@ const App = () => {
             <h2>Sign up today!</h2>
     
             <div className="sign-up-inputs">
-              <input type="text" className="username-input" placeholder="Username"/>
-              <input type="email" className="email-input" placeholder="Email"/>
-              <input type="password" className="password-input" placeholder="Password"/>
-              <input type="text" className="password-confirm-input" placeholder="Confirm password"/>
+              <input type="text" id="username" className="username-input" placeholder="Username" maxLength="16"/>
+              <input type="email" id="email" className="email-input" placeholder="Email"/>
+              <input type="password" id="password" className="password-input" placeholder="Password"/>
+              <input type="text" id="passwordconf" className="password-confirm-input" placeholder="Confirm password"/>
               <button className="sign-up-btn">Create account</button>
               <h6>Already have an account? <em onClick={() => {setShowSignIn(true); setShowSignUp(false);}}>Sign in</em></h6>
           </div>
