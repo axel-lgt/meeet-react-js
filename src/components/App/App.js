@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import { useMediaQuery } from 'react-responsive';
 
 import './App.scss';
 
@@ -12,6 +13,10 @@ const App = () => {
   const [showLandingInfo, setShowLandingInfo] = useState(true);
   const [showSignUp, setShowSignUp] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
+
+  // const desktopSize = useMediaQuery({
+  //   query: '(min-width: 1200px)'
+  // })
 
   return (
     <div className="landing-page-container">
@@ -31,7 +36,6 @@ const App = () => {
           <img className="landing-page-container hero-info-right-arrow" src={rightarrow} alt="Right arrow" onClick={() => {setShowSignUp(true); setShowLandingInfo(false);}}/>
         </div>
         }
-        
           { showSignUp && 
             <div className="sign-up-container">
             <h2>Sign up today!</h2>

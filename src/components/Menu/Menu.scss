@@ -1,0 +1,104 @@
+@use 'src/styles/reset';
+@use 'src/styles/vars';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //   sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', 'Arial';
+  font-weight: 400;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.menu-desktop {
+    display: none;
+}
+
+.menu-mobile {
+    position: absolute;
+    width: 100vw;
+    height: 5em;
+    background: vars.$menuColor;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 1em;
+    bottom: 0;
+
+    img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    &-meeet {
+        width: 48px;
+        height: 48px;
+    }
+
+    &-user, &-edit {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .menu-mobile {
+        display: none;
+    }
+
+    .menu-desktop {
+        position: absolute;
+        width: 5em;
+        height: 100%;
+        padding: 1em 0em;
+        background: vars.$menuColor;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+
+        
+
+        &-top-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &-user {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding-bottom: 5em;
+                &-avatar {
+                    background: black;
+                    height: 48px;
+                    width: 48px;
+                    border-radius: 50%;
+                    margin-bottom: 1em;
+                }
+            }
+            
+            &-tab {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 17em;
+            }
+        }
+
+
+        &-meeet {
+            height: 48px;
+            width: 48px;
+        }
+
+        img {
+            height: 32px;
+            width: 32px;
+        }
+    }
+}
