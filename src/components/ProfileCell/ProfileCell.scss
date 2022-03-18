@@ -1,0 +1,79 @@
+@use 'src/styles/reset';
+@use 'src/styles/vars';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //   sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', 'Arial';
+  font-weight: 400;
+  display: flex;
+  width: 100%;
+}
+
+.profile-cell-container {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    h3 {
+        font-size: 1em;
+    }
+    
+    & .background {
+        position: relative;
+
+        & .profile-picture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        & .top {
+            position: absolute;
+            color: white;
+            width: 100%;
+            height: 100%;
+    
+            & .added-fav {
+                right: 0;
+                height: 25%;
+                width: 25%;
+            }
+    
+            & .gradient {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 30%;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+
+                &-group {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    position: relative;
+                    flex-direction: column;
+                    align-items: space-between;
+
+                    & .name-connected-group {
+                        display: flex;
+                        flex-direction: row;
+                        height: 2em;
+                        justify-content: flex-start;
+                        & .connected {
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+    
+            
+        }
+    }
+}
