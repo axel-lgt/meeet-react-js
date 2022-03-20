@@ -20,7 +20,7 @@ body {
 }
 
 .menu-mobile {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 5em;
     background: vars.$menuColor;
