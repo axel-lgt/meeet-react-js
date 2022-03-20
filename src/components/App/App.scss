@@ -60,7 +60,7 @@ body {
     }
 
     & .hero {
-        
+
         &-meeet {
           margin-top: 2em;
           height: 104px;
@@ -69,16 +69,17 @@ body {
         }
 
         &-info {
-          height: 30em;
+          margin-top: 2em;
           justify-content: space-evenly;
           
           &-right-arrow {
-              margin-top: 5em;
+              margin-top: 20%;
               height: 44px;
               width: 44px;
           }
       
          & p {
+          margin-top: 2em;
            font-size: 1.2em;
            width: 75%;
            text-align: center;
@@ -87,51 +88,53 @@ body {
 
         }
 
-      
-      .sign-up, .sign-in {
-        &-container {
-          margin: 3em 0;
+      .sign-form-container {
+        margin: 3em 0;
 
-          & h2 {
-            text-align: center;
-            margin-bottom: 0.5em;
+        .sign-up, .sign-in {
+          &-container {
+  
+            & h2 {
+              text-align: center;
+              margin-bottom: 0.5em;
+            }
           }
-        }
-      
-        &-inputs {
-          display: flex;
-          flex-direction: column;
-          width: 270px;
         
-          & input, button {
-            font-family: 'Montserrat', 'Arial';
-            margin-top: 20px;
+          &-inputs {
+            display: flex;
+            flex-direction: column;
             width: 270px;
-            height: 40px;
-            border-radius: 30px;
-            border: none;
-          }
-        
-          & input {
-            background-color: vars.$inputColor;
-            padding-left: 10px;
-            font-weight: 400;
-            font-size: 1em;
-          }
           
-          & button {
-            background-color: vars.$buttonColor;
-            font-weight: 600;
-            font-size: 1.1em;
-            color: white;
-            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
-            margin-bottom: 0.8em;
+            & input, button {
+              font-family: 'Montserrat', 'Arial';
+              margin-top: 20px;
+              width: 270px;
+              height: 40px;
+              border-radius: 30px;
+              border: none;
+            }
+          
+            & input {
+              background-color: vars.$inputColor;
+              padding-left: 10px;
+              font-weight: 400;
+              font-size: 1em;
+            }
+            
+            & button {
+              background-color: vars.$buttonColor;
+              font-weight: 600;
+              font-size: 1.1em;
+              color: white;
+              box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
+              margin-bottom: 0.8em;
+            }
           }
         }
-    }
+      }
   }
 
-  @media screen and (max-width: 360px) and (max-height: 600px) {
+  @media screen and (max-height: 650px) {
     .landing-page-container {
       .header-banner {
         display: none;
@@ -168,7 +171,7 @@ body {
           position: absolute;
           height: 130px;
           width: 140px;
-          left: 15%;
+          left: 10%;
           top: 15%;
         }
       
@@ -176,7 +179,7 @@ body {
           position: absolute;
           height: 130px;
           width: 140px;
-          right: 15%;
+          right: 10%;
           top: 30%;
         }
       }

@@ -91,11 +91,9 @@ em {
     & .right {
       display: flex;
       flex-direction: column;
-      width: 13em;
-      height: 100%;
-      background: vars.$menuColor;
-      border-radius: 10px;
+      padding-top: 2em;
       margin: 1em;
+      width: 13em;
 
       b {
         font-weight: 600;
@@ -107,18 +105,26 @@ em {
       }
 
       & .filters {
+        padding: 0;
         margin: 0;
+        background: vars.$menuColor;
+        border-radius: 10px;
 
         &-top {
+          padding: 0;
           flex-direction: row;
+          width: 100%;
+          align-items: center;
 
           h4 {
             font-size: 1.2em;
-            padding: 0.3em;
+            padding-left: 0.5em;
           }
         }
 
         &-main {
+          padding: 0;
+          background: green;
 
           & .filter {
             margin: 0;

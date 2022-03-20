@@ -18,13 +18,13 @@ body {
     aspect-ratio: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
     
     h3 {
         font-size: 1em;
     }
     
-    & .background {
+    & .cell {
         position: relative;
 
         & .profile-picture {
@@ -34,10 +34,10 @@ body {
         }
 
         & .top {
-            position: absolute;
-            color: white;
             width: 100%;
             height: 100%;
+            position: absolute;
+            color: white;
     
             & .added-fav {
                 right: 0;
@@ -46,34 +46,39 @@ body {
             }
     
             & .gradient {
+                display: flex;
+                flex-direction: column;
                 position: absolute;
                 bottom: 0;
                 width: 100%;
                 height: 30%;
                 background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 
-                &-group {
-                    width: 100%;
-                    height: 100%;
+                &-container {
+                    position: static;
                     display: flex;
-                    position: relative;
                     flex-direction: column;
-                    align-items: space-between;
 
-                    & .name-connected-group {
+                    &-group {
                         display: flex;
-                        flex-direction: row;
-                        height: 2em;
-                        justify-content: flex-start;
-                        & .connected {
-                            height: 20px;
-                            width: 20px;
+                        align-items: flex-start;
+                        margin-left: 0.5em;
+    
+                        & .name-connected-group {
+                            flex-direction: row;
+                            align-items: center;
+                            height: 2em;
+                            margin: 0;
+                            
+                            & .connected {
+                                margin-left: 5px;
+                                height: 10px;
+                                width: 10px;
+                            }
                         }
                     }
                 }
             }
-    
-            
         }
     }
 }

@@ -12,7 +12,6 @@ const App = () => {
 
   const [showLandingInfo, setShowLandingInfo] = useState(true);
   const [showSignUp, setShowSignUp] = useState(false);
-  const [showSignIn, setShowSignIn] = useState(false);
   const [isDesktop, setDesktop] = useState(window.innerWidth > 1200);
 
   const updateMedia = () => {
@@ -22,7 +21,6 @@ const App = () => {
   const handleSignUp = () => {
     setShowSignUp(true);
     setShowLandingInfo(false);
-    console.log('handled sign up');
   }
 
   useEffect(() => {

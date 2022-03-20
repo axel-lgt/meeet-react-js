@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import ProfileCell from '../ProfileCell/ProfileCell';
+import ProfileInfo from '../ProfileInfo/ProfileInfo';
 import filter from '../../assets/filters/filter.png';
 import unchecked from '../../assets/filters/unchecked.svg';
 import checked from '../../assets/filters/checked.svg';
