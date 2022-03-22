@@ -140,6 +140,10 @@ em {
         height: 100%;
         width: 100%;
 
+        & .cross {
+            display: none;
+        }
+
         & .info {
             padding: 1em;
             margin: 1em 0;
@@ -182,7 +186,7 @@ em {
                         }
                         h5 {
                             font-weight: 500;
-                            width: 6em;
+                            width: 7em;
                         }
                     }
                 }
@@ -208,13 +212,159 @@ em {
             width: 80%;
             align-self: center;
         }
+
+        & .info {
+            
+            & .table {
+                
+                &-details {
+                    align-self: start;
+                }
+            }
+        }
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .profile-info-container {
-        align-self: center;
-        height: 15em;
-        width: 30em;
+    .menu {
+        display: none;
+    }
+
+    .block {
+        height: 600px;
+        width: 800px;
+        position: fixed;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        background: white;
+
+        .profile-info-container {
+            flex-direction: row;
+            max-width: inherit;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            
+            & .image {
+                & .profile-picture {
+                    height: 100%;
+                    width: 100%;
+                    
+                }
+
+                & .overlay {
+                    color: white;
+                    justify-content: space-around;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+        
+                    & .gradient {
+                        display: flex;
+                        position: absolute;
+                        top: 0;
+                        height: 100px;
+        
+                        &-group {
+                            display: flex;
+                            flex-direction: row;
+                            height: 100%;
+        
+                            & .back-arrow {
+                                display: none;
+                            }
+        
+                            & .name-connected-distance {
+                                left: 15px;
+                                top: -35px;
+            
+                                & .name-connected-group {
+                                    position: static;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    height: 1em;
+                                    margin: 0;
+                                    
+                                    & .connected {
+                                        margin-left: 5px;
+                                        height: 10px;
+                                        width: 10px;
+                                    }
+                                }
+                            }
+        
+                            & .favorite-blocked-group {
+                                top: -40px;
+                                left: 80%;
+    
+                                img {
+                                    height: 32px;
+                                    width: 32px;
+                                }
+                            }
+                        }
+        
+                    }
+                    & .bottom-group {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+    
+                        & .message {
+                            left: 100%;
+                            transform: translate(-50px);
+                        }
+    
+                        & .dots {
+                            left: 50%;
+                            transform: translate(-50%);
+                        }
+                    }
+                }
+            }
+    
+            & .bottom {
+                width: 100%;
+                flex-direction: column;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+
+                & .cross {
+                    display: flex;
+                    position: absolute;
+                    height: 32px;
+                    width: 32px;
+                    right: 10px;
+                    top: 10px;
+                }        
+    
+                & .info {
+                    margin: 0 0 1em 0;
+                    height: 100%;
+                    
+                    & .description {
+                        align-self: center;
+                    }
+        
+                    & .interests {
+                        align-self: center;
+                    }
+        
+                    & .table {
+                        align-self: center;
+        
+                        &-details {
+                            margin: 0;
+                            padding: 0;
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
