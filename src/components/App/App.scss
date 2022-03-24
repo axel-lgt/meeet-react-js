@@ -12,6 +12,7 @@ body {
     font-weight: 400;
     display: flex;
     width: 100%;
+    overflow-x: hidden;
   }
   
   em {
@@ -164,8 +165,12 @@ body {
 
   @media screen and (min-width: 1200px) {
     .landing-page-container {
+      width: 100vw;
+      
+
       .header-banner {
         background: none;
+        width: 100%;
         height: 0;
         &-fav {
           position: absolute;
@@ -185,6 +190,7 @@ body {
       }
 
       & .hero {
+        width: 100%;
         &-meeet {
           height: 180px;
           width: 180px;

@@ -8,6 +8,7 @@ import Error from './components/Error/Error';
 import Home from './components/Home/Home';
 import Settings from './components/Settings/Settings';
 import ProfileInfo from './components/ProfileInfo/ProfileInfo';
+import EditProfile from './components/EditProfile/EditProfile';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route path="/home" element={<Home />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/profileinfo" element={<ProfileInfo />} />
+        <Route path="/editprofile" element={<EditProfile />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
