@@ -36,6 +36,7 @@ body {
     }
 
     & .profile-tab {
+        cursor: pointer;
         width: 100%;
         flex-direction: row;
         padding: 1em;
@@ -73,6 +74,7 @@ body {
         }
 
         .email {
+            cursor: pointer;
             flex-direction: row;
             width: 100%;
             height: 40px;
@@ -83,6 +85,7 @@ body {
         }
 
         .password {
+            cursor: pointer;
             flex-direction: row;
             width: 100%;
             height: 40px;
@@ -108,6 +111,7 @@ body {
         }
 
         .blocked-users {
+            cursor: pointer;
             flex-direction: row;
             width: 100%;
             height: 40px;
@@ -142,5 +146,11 @@ body {
             background: transparent;
             border: 2px solid vars.$buttonColor;
         }
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .settings-container {
     }
 }
