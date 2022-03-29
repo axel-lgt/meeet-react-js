@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './styles/index.scss';
 import Landing from './components/Landing/Landing';
 import Menu from './components/Menu/Menu';
@@ -11,9 +11,13 @@ import EditProfile from './components/EditProfile/EditProfile';
 
 
 const App = () => {
+
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/'
+
   return (
     <>
-      <Menu />
+      {!isLandingPage && <Menu />}
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
