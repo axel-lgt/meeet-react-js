@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Menu.scss';
 
@@ -13,30 +14,52 @@ const Menu = () => {
  
     return(
         <div className="menu">
-            <section className="menu-desktop">
+            <nav className="menu-desktop">
                 <div className="menu-desktop-top-group">
                     <div className="menu-desktop-top-group-user">
                         <div className="menu-desktop-top-group-user-avatar"></div>
                         <h6>James</h6>
                     </div>
                     <div className="menu-desktop-top-group-tab">
-                        <img className="menu-desktop-top-group-tab-edit" src={edit} alt="" />
-                        <img className="menu-desktop-top-group-tab-fav" src={favorites} alt="Favorites icon" />
-                        <img className="menu-desktop-top-group-tab-seenby" src={seenby} alt="Seen by icon" />
-                        <img className="menu-desktop-top-group-tab-msg" src={messages} alt="Messages icon" />
-                        <img className="menu-desktop-top-group-tab-settings" src={settings} alt="Settings icon" />
+                        <Link to="/editprofile">
+                            <img className="menu-desktop-top-group-tab-edit" src={edit} alt="" />
+                        </Link>
+                        <Link to="/favorites">
+                            <img className="menu-desktop-top-group-tab-fav" src={favorites} alt="Favorites icon" />
+                        </Link>
+                        <Link to="/seenby">
+                            <img className="menu-desktop-top-group-tab-seenby" src={seenby} alt="Seen by icon" />
+                        </Link>
+                        <Link to="/messages">
+                            <img className="menu-desktop-top-group-tab-msg" src={messages} alt="Messages icon" />
+                        </Link>
+                        <Link to="/settings">
+                            <img className="menu-desktop-top-group-tab-settings" src={settings} alt="Settings icon" />
+                        </Link>
                     </div>
                 </div>
-                <img className="menu-desktop-meeet" src={meeet} alt="Meeet logo" />
-            </section>
+                <Link to="/home">
+                    <img className="menu-desktop-meeet" src={meeet} alt="Meeet logo" />
+                </Link>
+            </nav>
 
-            <section className="menu-mobile">
-                <img className="menu-mobile-fav" src={favorites} alt="Favorites icon" />
-                <img className="menu-mobile-seenby" src={seenby} alt="Seen by icon" />
-                <img className="menu-mobile-meeet" src={meeet} alt="Meeet logo" />
-                <img className="menu-mobile-msg" src={messages} alt="Messages icon" />
-                <img className="menu-mobile-settings" src={settings} alt="Settings icon" />
-            </section>
+            <nav className="menu-mobile">
+                <Link to="/favorites">
+                    <img className="menu-mobile-fav" src={favorites} alt="Favorites icon" />
+                </Link>
+                <Link to="/seenby">
+                    <img className="menu-mobile-seenby" src={seenby} alt="Seen by icon" />
+                </Link>
+                <Link to="/home">
+                    <img className="menu-mobile-meeet" src={meeet} alt="Meeet logo" />
+                </Link>
+                <Link to="/messages">
+                    <img className="menu-mobile-msg" src={messages} alt="Messages icon" />
+                </Link>
+                <Link to="/settings">
+                    <img className="menu-mobile-settings" src={settings} alt="Settings icon" />
+                </Link>
+            </nav>
         </div>
     )
 };
