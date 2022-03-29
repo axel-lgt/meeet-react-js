@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import './App.scss';
+import './Landing.scss';
 import SignUp from '../SignUp/SignUp';
 
 import favimg from '../../assets/fav-img.png';
@@ -8,7 +8,7 @@ import msgimg from '../../assets/msg-img.png';
 import meeet from '../../assets/meeet-logo.svg';
 import rightarrow from '../../assets/right-arrow.png'
 
-const App = () => {
+const Landing = () => {
 
   const [showLandingInfo, setShowLandingInfo] = useState(true);
   const [showSignUp, setShowSignUp] = useState(false);
@@ -55,4 +55,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Landing;
