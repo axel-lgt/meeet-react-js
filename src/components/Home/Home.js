@@ -26,6 +26,35 @@ const Home = () => (
                 <div className="home-container profiles-grid cell">case</div>
                 <div className="home-container profiles-grid cell">case</div> */}
                 <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
+                <ProfileCell />
             </div>
         </div>
         <div className="home-container right">

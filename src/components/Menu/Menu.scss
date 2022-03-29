@@ -20,6 +20,7 @@ body {
 }
 
 .menu-mobile {
+    z-index: 5;
     position: fixed;
     width: 100vw;
     height: 5em;
@@ -51,6 +52,7 @@ body {
     }
 
     .menu-desktop {
+        z-index: 5;
         position: fixed;
         width: 5em;
         height: 100%;

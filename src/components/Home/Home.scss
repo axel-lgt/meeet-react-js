@@ -23,6 +23,7 @@ em {
   display: flex;
   flex-direction: column;
   background: pink;
+  padding-bottom: 6em;
 
   h1, h2 {
     font-size: 1.5em;
@@ -54,7 +55,6 @@ em {
       grid-auto-rows: 1fr;
   
       & .profile-cell-container {
-        aspect-ratio: 1;
       }
     }
   
