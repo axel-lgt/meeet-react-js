@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import './styles/index.scss';
 import Landing from './components/Landing/Landing';
@@ -12,6 +12,17 @@ import EditProfile from './components/EditProfile/EditProfile';
 
 const App = () => {
 
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 1200);
+
+  const updateMedia = () => {
+      setDesktop(window.innerWidth > 1200);
+  }
+
+  useEffect(() => {
+      window.addEventListener('resize', updateMedia);
+      return () => window.removeEventListener('resize', updateMedia);
+  })
+
   const location = useLocation();
   const isLandingPage = location.pathname === '/'
 
@@ -20,9 +31,15 @@ const App = () => {
       {!isLandingPage && <Menu />}
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/home" element={<Home />}>
+          {isDesktop &&
+          <Route path="/home/profileinfo" element={<ProfileInfo />} />
+          }
+        </Route>
+        {!isDesktop &&
         <Route path="/profileinfo" element={<ProfileInfo />} />
+        }
+        <Route path="/settings" element={<Settings />} />
         <Route path="/editprofile" element={<EditProfile />} />
         <Route path="*" element={<Error />} />
       </Routes> 

@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import './ProfileInfo.scss';
 
 import imgplaceholder from '../../assets/profilecell/avatar-placeholder.png';
@@ -12,7 +14,18 @@ import cross from '../../assets/profilecell/cross.svg';
 
 const ProfileInfo = () => {
 
+    const navigate = useNavigate();
+
+    function handleGoBack() {
+        navigate(-1);
+    }
+
+    const handleCross = () => {
+        navigate(-1);
+    }
+
     return (
+        <>
         <div className="block">
             <div className="profile-info-container">
                 <div className="profile-info-container image">
@@ -22,7 +35,7 @@ const ProfileInfo = () => {
                             <div className="profile-info-container image profile-picture overlay gradient">
                                 <div className="profile-info-container image profile-picture overlay gradient-group">
                                     <div className="profile-info-container image profile-picture overlay gradient-group back-arrow">
-                                        <img src={backarrow} alt="Return to last page" />
+                                        <img src={backarrow} alt="Return to last page" onClick={handleGoBack}/>
                                     </div>
                                     <div className="profile-info-container image profile-picture overlay gradient-group name-connected-distance">
                                         <div className="profile-info-container image profile-picture overlay gradient-group name-connected-distance name-connected-group">
@@ -47,7 +60,7 @@ const ProfileInfo = () => {
                 </div>
                 <div className="profile-info-container bottom">
                     <div className="profile-info-container bottom cross">
-                        <img src={cross} alt="Close this modal" />
+                        <img src={cross} alt="Close this modal" onClick={handleCross}/>
                     </div>
                     <div className="profile-info-container bottom info">
                         <div className="profile-info-container bottom info description">
@@ -91,6 +104,7 @@ const ProfileInfo = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 };
 
