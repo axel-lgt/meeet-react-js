@@ -48,6 +48,36 @@ const BlockedUsers = () => {
                         </div>
                         <img className="unblock-icon" src={unblock} alt="Unblock this user" />
                     </div>
+                    <div className="blocked-container blocked-list cell">
+                        <div className="blocked-container blocked-list cell blocked-img-name-group">
+                            <img className="blocked-img" src={imgplaceholder} alt="User photo" />
+                            <div className="blocked-name-date-group">
+                                <h5>Name</h5>
+                                <h5>Blocked on: dd/mm/yyyy</h5>
+                            </div>
+                        </div>
+                        <img className="unblock-icon" src={unblock} alt="Unblock this user" />
+                    </div>
+                    <div className="blocked-container blocked-list cell">
+                        <div className="blocked-container blocked-list cell blocked-img-name-group">
+                            <img className="blocked-img" src={imgplaceholder} alt="User photo" />
+                            <div className="blocked-name-date-group">
+                                <h5>Name</h5>
+                                <h5>Blocked on: dd/mm/yyyy</h5>
+                            </div>
+                        </div>
+                        <img className="unblock-icon" src={unblock} alt="Unblock this user" />
+                    </div>
+                    <div className="blocked-container blocked-list cell">
+                        <div className="blocked-container blocked-list cell blocked-img-name-group">
+                            <img className="blocked-img" src={imgplaceholder} alt="User photo" />
+                            <div className="blocked-name-date-group">
+                                <h5>Name</h5>
+                                <h5>Blocked on: dd/mm/yyyy</h5>
+                            </div>
+                        </div>
+                        <img className="unblock-icon" src={unblock} alt="Unblock this user" />
+                    </div>
                 </div>
             </div>
             }

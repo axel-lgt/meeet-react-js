@@ -53,6 +53,7 @@ body {
             flex-direction: row;
             width: 100%;
             padding: 0.5em;
+            background: vars.$lightGreyColor;
 
             .blocked-img-name-group {
                 flex-direction: row;
@@ -74,6 +75,14 @@ body {
             .unblock-icon {
                 width: 32px;
                 height: 32px;
+            }
+        }
+
+        .cell:nth-child(2n) {
+            background: vars.$headerTabColor;
+
+            .blocked-img-name-group {
+                background: vars.$headerTabColor;
             }
         }
     }

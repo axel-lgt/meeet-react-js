@@ -44,9 +44,9 @@ const App = () => {
         }
         <Route path="/settings" element={<Settings />}>
           <Route path="/settings/editprofile" element={<EditProfile />} />
-          <Route path="/settings/email" element={<Email />}></Route>
-          <Route path="/settings/password" element={<Password />}></Route>
-          <Route path="/settings/blocked" element={<BlockedUsers />}></Route>
+          <Route path="/settings/email" element={<Email />} />
+          <Route path="/settings/password" element={<Password />} />
+          <Route path="/settings/blocked" element={<BlockedUsers />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes> 

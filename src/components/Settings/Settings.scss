@@ -14,11 +14,16 @@ body {
   width: 100%;
 }
 
+.settings-block {
+    padding-bottom: 6em;
+}
+
 .settings-container {
     display: flex;
     flex-direction: column;
     width: 100vw;
     max-width: 100%;
+    height: 100%;
 
     h2 {
         font-size: 1.2em;
@@ -122,9 +127,22 @@ body {
         }
     }
 
+    & .privacy-btns-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        & .privacy-tab {
+            justify-self: flex-start;
+        }
+
+        & .logoff-delete-group {
+            justify-content: flex-end;
+        }
+    }
+
     & .logoff-delete-group {
-        position: absolute;
-        bottom: 6em;
         padding: 0 0.5em;
         
         button {
@@ -149,8 +167,159 @@ body {
     }
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
 
-    .settings-container {
+    .settings-block {
+        position: fixed;
+        width: 800px;
+        height: 600px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+        background: white;
+
+        .settings-container {
+            width: 100%;
+
+            & .header-tab {
+                background: white;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            & .profile-tab {
+                display: none;
+            }
+
+            .movable {
+                width: 250px;
+                height: 330px;
+                background: white;
+                box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+                margin-left: 20px;
+                
+                & .account-tab {
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    height: auto;
+                    margin: 0;
+
+                    & .email, .password {
+                        height: 40px;
+                        border-radius: 0;
+                    }
+                }
+
+                .header {
+                    background: vars.$headerTabColor;
+                    height: 40px;
+                }
+
+                & .privacy-tab {
+                    height: auto;
+                    margin: 0;
+
+                    & .header {
+                        height: 40px;
+                    }
+
+                    & .blocked-users {
+                        height: 40px;
+                    }
+                }
+
+                .logoff-delete-group {
+                    margin: 0;
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+
+                &:nth-child(0) {
+                    padding-left: 1em;
+                }
+            }
+        }
+
+        
+    }
+
+    .blocked-block {
+        position: absolute;
+        background: white;
+        width: 480px;
+        height: 530px;
+        bottom: 20px;
+        right: 20px;
+        overflow-y: scroll;
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 10px;
+
+        .blocked-container {
+            width: 100%;
+
+            & .header-tab {
+                position: fixed;
+                width: 480px;
+                height: 40px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+
+                & .back-arrow {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .password-block {
+        position: absolute;
+        background: white;
+        width: 480px;
+        height: 530px;
+        bottom: 20px;
+        right: 20px;
+        overflow-y: scroll;
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 10px;
+
+        .password-container {
+            width: 100%;
+
+            & .header-tab {
+                width: 100%;
+                height: 40px;
+
+                & .back-arrow {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .email-block {
+        position: absolute;
+        background: white;
+        width: 480px;
+        height: 530px;
+        bottom: 20px;
+        right: 20px;
+        overflow-y: scroll;
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 10px;
+
+        .email-container {
+            width: 100%;
+
+            & .header-tab {
+                width: 100%;
+                height: 40px;
+
+                & .back-arrow {
+                    display: none;
+                }
+            }
+        }
     }
 }
