@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 import './Menu.scss';
-import '../../styles/_vars.scss';
 
 import edit from '../../assets/navbar/editprofile.png';
 import favorites from '../../assets/navbar/favorites.png'; 

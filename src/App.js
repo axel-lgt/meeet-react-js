@@ -8,6 +8,9 @@ import Home from './components/Home/Home';
 import Settings from './components/Settings/Settings';
 import ProfileInfo from './components/ProfileInfo/ProfileInfo';
 import EditProfile from './components/EditProfile/EditProfile';
+import Email from './components/Settings/Email/Email';
+import Password from './components/Settings/Password/Password';
+import BlockedUsers from './components/Settings/BlockedUsers/BlockedUsers';
 
 
 const App = () => {
@@ -39,8 +42,12 @@ const App = () => {
         {!isDesktop &&
         <Route path="/profileinfo" element={<ProfileInfo />} />
         }
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/editprofile" element={<EditProfile />} />
+        <Route path="/settings" element={<Settings />}>
+          <Route path="/settings/editprofile" element={<EditProfile />} />
+          <Route path="/settings/email" element={<Email />}></Route>
+          <Route path="/settings/password" element={<Password />}></Route>
+          <Route path="/settings/blocked" element={<BlockedUsers />}></Route>
+        </Route>
         <Route path="*" element={<Error />} />
       </Routes> 
     </>

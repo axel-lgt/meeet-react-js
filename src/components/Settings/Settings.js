@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Outlet, Link } from 'react-router-dom'
 
 import './Settings.scss';
 import EditProfile from '../EditProfile/EditProfile';
@@ -45,36 +46,44 @@ const Settings = () => {
                 <div className="settings-container header-tab">
                     <h2>Settings</h2>
                 </div>
-                <div className="settings-container profile-tab" onClick={editProfileHandler}>
-                    <img src={imgplaceholder} alt="Your profile picture" />
-                    <div className="settings-container profile-tab name-edit-profile-group">
-                        <h3>Name</h3>
-                        <h3>Edit profile</h3>
+                <Link to="/settings/editprofile">
+                    <div className="settings-container profile-tab">
+                        <img src={imgplaceholder} alt="Your profile picture" />
+                        <div className="settings-container profile-tab name-edit-profile-group">
+                            <h3>Name</h3>
+                            <h3>Edit profile</h3>
+                        </div>
+                        <img className="edit-icon" src={edit} alt="Edit profile" />
                     </div>
-                    <img className="edit-icon" src={edit} alt="Edit profile" />
-                </div>
+                </Link>
                 <div className="movable">
                     <div className="settings-container account-tab">
                         <div className="settings-container account-tab header">
                             <h3>Account</h3>
                         </div>
-                        <div className="settings-container account-tab email" onClick={emailSettingsHandler}>
-                            <h3>Email</h3>
-                            <img src={rightarrow} alt="Go to email settings" />
-                        </div>
-                        <div className="settings-container account-tab password" onClick={passwordSettingsHandler}>
-                            <h3>Password</h3>
-                            <img src={rightarrow} alt="Go to password settings" />
-                        </div>
+                        <Link to="/settings/email">
+                            <div className="settings-container account-tab email">
+                                <h3>Email</h3>
+                                <img src={rightarrow} alt="Go to email settings" />
+                            </div>
+                        </Link>
+                        <Link to="/settings/password">
+                            <div className="settings-container account-tab password">
+                                <h3>Password</h3>
+                                <img src={rightarrow} alt="Go to password settings" />
+                            </div>
+                        </Link>
                     </div>
                     <div className="settings-container privacy-tab">
                         <div className="settings-container privacy-tab header">
                             <h3>Privacy</h3>
                         </div>
-                        <div className="settings-container privacy-tab blocked-users" onClick={blockedSettingsHandler}>
-                            <h3>Blocked users</h3>
-                            <img src={rightarrow} alt="Go to blocked users settings" />
-                        </div>
+                        <Link to="/settings/blocked">
+                            <div className="settings-container privacy-tab blocked-users">
+                                <h3>Blocked users</h3>
+                                <img src={rightarrow} alt="Go to blocked users settings" />
+                            </div>
+                        </Link>
                     </div>
     
                     <div className="settings-container logoff-delete-group">
@@ -96,6 +105,7 @@ const Settings = () => {
             { showBlockedSettings &&
                 <BlockedUsers />
             }
+        <Outlet />
         </div>
     )
 };
