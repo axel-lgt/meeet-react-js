@@ -44,6 +44,16 @@ body {
     &-user, &-edit {
         display: none;
     }
+
+    & .icon-background {
+        display: flex;
+        background: vars.$menuActiveTab;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media screen and (min-width: 1200px) {

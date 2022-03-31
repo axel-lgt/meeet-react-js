@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import './Menu.scss';
+import '../../styles/_vars.scss';
 
 import edit from '../../assets/navbar/editprofile.png';
 import favorites from '../../assets/navbar/favorites.png'; 
@@ -21,21 +22,21 @@ const Menu = () => {
                         <h6>James</h6>
                     </div>
                     <div className="menu-desktop-top-group-tab">
-                        <Link to="/editprofile">
+                        <NavLink to="/editprofile">
                             <img className="menu-desktop-top-group-tab-edit" src={edit} alt="" />
-                        </Link>
-                        <Link to="/favorites">
+                        </NavLink>
+                        <NavLink to="/favorites">
                             <img className="menu-desktop-top-group-tab-fav" src={favorites} alt="Favorites icon" />
-                        </Link>
-                        <Link to="/seenby">
+                        </NavLink>
+                        <NavLink to="/seenby">
                             <img className="menu-desktop-top-group-tab-seenby" src={seenby} alt="Seen by icon" />
-                        </Link>
-                        <Link to="/messages">
+                        </NavLink>
+                        <NavLink to="/messages">
                             <img className="menu-desktop-top-group-tab-msg" src={messages} alt="Messages icon" />
-                        </Link>
-                        <Link to="/settings">
+                        </NavLink>
+                        <NavLink to="/settings">
                             <img className="menu-desktop-top-group-tab-settings" src={settings} alt="Settings icon" />
-                        </Link>
+                        </NavLink>
                     </div>
                 </div>
                 <Link to="/home">
@@ -44,21 +45,21 @@ const Menu = () => {
             </nav>
 
             <nav className="menu-mobile">
-                <Link to="/favorites">
+                <NavLink to="/favorites" className={({ isActive }) => isActive ? 'icon-background' : ''}>
                     <img className="menu-mobile-fav" src={favorites} alt="Favorites icon" />
-                </Link>
-                <Link to="/seenby">
+                </NavLink>
+                <NavLink to="/seenby" className={({ isActive }) => isActive ? 'icon-background' : ''}>
                     <img className="menu-mobile-seenby" src={seenby} alt="Seen by icon" />
-                </Link>
+                </NavLink>
                 <Link to="/home">
                     <img className="menu-mobile-meeet" src={meeet} alt="Meeet logo" />
                 </Link>
-                <Link to="/messages">
+                <NavLink to="/messages" className={({ isActive }) => isActive ? 'icon-background' : ''}>
                     <img className="menu-mobile-msg" src={messages} alt="Messages icon" />
-                </Link>
-                <Link to="/settings">
+                </NavLink>
+                <NavLink to="/settings" className={({ isActive }) => isActive ? 'icon-background' : ''}>
                     <img className="menu-mobile-settings" src={settings} alt="Settings icon" />
-                </Link>
+                </NavLink>
             </nav>
         </div>
     )
