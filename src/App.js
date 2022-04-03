@@ -11,6 +11,7 @@ import EditProfile from './components/EditProfile/EditProfile';
 import Email from './components/Settings/Email/Email';
 import Password from './components/Settings/Password/Password';
 import BlockedUsers from './components/Settings/BlockedUsers/BlockedUsers';
+import Favorites from './components/Favorites/Favorites';
 
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
           </Route>
         </>
         }
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<Error />} />
       </Routes> 
     </>

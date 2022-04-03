@@ -1,0 +1,86 @@
+@use 'src/styles/reset';
+@use 'src/styles/vars';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //   sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', 'Arial';
+  font-weight: 400;
+  display: flex;
+  width: 100%;
+}
+
+.favorites-block {
+    padding-bottom: 6em;
+}
+
+.favorites-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 100%;
+    height: 100%;
+
+    h2 {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 1.2em;
+        padding: 1em 1em 0 1em;
+    }
+
+    .favorites-header-tab {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 50px;
+        background: vars.$headerTabColor;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .favorites-grid {
+        background: grey;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+        padding: 1em 1em 0 1em;
+        grid-auto-rows: 1fr;
+
+        .favorites-cell {
+            background: green;
+            border: 1px solid black;
+
+            &:first-child {
+                border-top-left-radius: 10px;
+            }
+
+            &:nth-child(3) {
+                border-top-right-radius: 10px;
+            }
+        }
+
+        &::before {
+            content: "";
+            width: 0;
+            padding-bottom: 100%;
+            display: block;
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+        }
+
+        & > *:first-child {
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+          }
+    }
+
+}
