@@ -33,7 +33,7 @@ const Menu = () => {
                         <NavLink to="/messages">
                             <img className="menu-desktop-top-group-tab-msg" src={messages} alt="Messages icon" />
                         </NavLink>
-                        <NavLink to="/settings">
+                        <NavLink to="/home/settings">
                             <img className="menu-desktop-top-group-tab-settings" src={settings} alt="Settings icon" />
                         </NavLink>
                     </div>
