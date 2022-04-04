@@ -88,12 +88,12 @@ em {
   .home-container {
     flex-direction: row;
 
-    & .right {
+    .right {
       display: flex;
       flex-direction: column;
-      padding-top: 2em;
+      padding-top: 2.5em;
       margin: 1em;
-      width: 13em;
+      width: 14em;
 
       b {
         font-weight: 600;
@@ -104,17 +104,16 @@ em {
         width: 32px;
       }
 
-      & .filters {
-        padding: 0;
-        margin: 0;
+      .filters {
+        padding: 1em;
         background: vars.$menuColor;
         border-radius: 10px;
 
         &-top {
-          padding: 0;
+          display: flex;
           flex-direction: row;
-          width: 100%;
           align-items: center;
+          width: 100%;
 
           h4 {
             font-size: 1.2em;
@@ -123,12 +122,10 @@ em {
         }
 
         &-main {
-          padding: 0;
-          background: green;
 
           & .filter {
-            margin: 0;
-            padding-bottom: 1em;
+            display: flex;
+            margin-top: 1em;
             width: 100%;
             flex-direction: row;
             align-items: center;

@@ -33,23 +33,23 @@ const Home = () => {
                     
                 </div>
             </div>
-            <div className="home-container right">
-                <div className="home-container right filters">
-                    <div className="home-container right filters-top">
+            <div className="right">
+                <div className="filters">
+                    <div className="filters-top">
                         <img src={filter} alt="Filter icon" />
                         <h4>Filters</h4>
                     </div>
 
-                    <div className="home-container right filters-main">
-                        <div className="home-container right filters-main filter age">
+                    <div className="filters-main">
+                        <div className="filter age">
                             <img src={checked} alt="Checked filter icon" />
                             <span>Age: <b>18</b> to <b>30</b></span>
                         </div>
-                        <div className="home-container right filters-main filter gender">
+                        <div className="filter gender">
                             <img src={unchecked} alt="Unchecked filter icon" />
                             <span>Gender</span>
                         </div>
-                        <div className="home-container right filters-main filter looking-for">
+                        <div className="filter looking-for">
                             <img src={checked} alt="Checked filter icon" />
                             <span>Looking for: <b>Relationships</b></span>
                         </div>
