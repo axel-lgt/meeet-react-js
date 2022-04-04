@@ -1,0 +1,109 @@
+@use 'src/styles/reset';
+@use 'src/styles/vars';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //   sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', 'Arial';
+  font-weight: 400;
+  display: flex;
+  width: 100%;
+}
+
+.messages-block {
+    padding-bottom: 6em;
+}
+
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 100%;
+
+    h2 {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+
+    h3 {
+        font-size: 0.9em;;
+    }
+
+    h4 {
+        font-size: 0.8em;
+    }
+
+    span {
+        font-size: 0.8em;
+    }
+
+    .messages-header-tab {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 50px;
+        background: vars.$headerTabColor;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .messages-list {
+
+        .messages-item {
+            display: flex;
+            flex-direction: row;
+            background: vars.$lightGreyColor;
+            padding: 0.5em 2.5em;
+            justify-content: space-between;
+
+            .msg-left-group {
+                display: flex;
+                flex-direction: row;
+
+                .msg-user-photo {
+                    width: 32px;
+                    height: 32px;
+                    object-fit: cover;
+                    border-radius: 50%
+                }
+    
+                .msg-username-preview-group {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding-left: 20px;
+                    justify-content: space-between;
+    
+                    .msg-username-notif {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+    
+                        .msg-notif {
+                            font-size: 0.8em;
+                            height: auto;
+                            margin-left: 0.5em;
+                            background: vars.$notificationColor;
+                            padding: 2px 5px;
+                            border-radius: 50%;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            span {
+                justify-self: flex-end;
+            }
+            
+
+            &:nth-child(2n) {
+                background: vars.$headerTabColor;
+            }
+        }
+    }
+}
