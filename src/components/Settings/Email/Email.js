@@ -7,21 +7,13 @@ import backarrow from '../../../assets/mobile/mobile-back-arrow.svg';
 
 const Email = () => {
 
-    const [showEmailSettings, setShowEmailSettings] = useState(true);
-    const [showSettings, setShowSettings] = useState(false);
-
-    const settingsHandler = () => {
-        setShowEmailSettings(false);
-        setShowSettings(true);
-    }
-
     return(
         <div className="email-block">
-            { showEmailSettings &&
+
             <div className="email-container">
                 <div className="email-container header-tab">
                     <div className="email-container header-tab back-arrow">
-                        <img src={backarrow} alt="Go back to settings" onClick={settingsHandler} />
+                        <img src={backarrow} alt="Go back to settings"  />
                     </div>
                     <h4>email@address.com</h4>
                 </div>
@@ -31,10 +23,7 @@ const Email = () => {
                     <button>Change email</button>
                 </div>
             </div>
-            }
-            { showSettings && 
-                <Settings />
-            }
+
         </div>
     )
 };

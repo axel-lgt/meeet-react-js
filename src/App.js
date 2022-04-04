@@ -41,11 +41,12 @@ const App = () => {
           {isDesktop &&
           <>
             <Route path="/home/profileinfo" element={<ProfileInfo />} />
-            <Route path="/home/settings" element={<Settings />} />
-            <Route path="/home/settings/editprofile" element={<EditProfile />} />
-            <Route path="/home/settings/email" element={<Email />} />
-            <Route path="/home/settings/password" element={<Password />} />
-            <Route path="/home/settings/blocked" element={<BlockedUsers />} />
+            <Route path="/home/settings" element={<Settings />}>
+              <Route path="/home/settings/editprofile" element={<EditProfile />} />
+              <Route path="/home/settings/email" element={<Email />} />
+              <Route path="/home/settings/password" element={<Password />} />
+              <Route path="/home/settings/blocked" element={<BlockedUsers />} />
+            </Route>
           </>
           }
         </Route>
