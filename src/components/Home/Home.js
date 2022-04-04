@@ -4,6 +4,11 @@ import ProfileCell from '../ProfileCell/ProfileCell';
 import filter from '../../assets/filters/filter.png';
 import unchecked from '../../assets/filters/unchecked.svg';
 import checked from '../../assets/filters/checked.svg';
+
+import imgplaceholder from '../../assets/profilecell/avatar-placeholder.png';
+import connected from '../../assets/profilecell/connected.svg';
+import addedfav from '../../assets/profilecell/added-favorite.png';
+
 import './Home.scss';
 
 const Home = () => {
@@ -13,24 +18,11 @@ const Home = () => {
     return(
         <>
         <div className="home-container">
-            <div className="home-container left">
+            <div className="left">
                 <h1>Hi <em>James</em>! You are currently located in <em>Paris</em>.</h1>
-                <div className="home-container left map-reduced"></div>
-                <div className="home-container left profiles-grid">
-                    {/* <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div>
-                    <div className="home-container profiles-grid cell">case</div> */}
-                    <ProfileCell  />
-                    
+                <div className="map-reduced"></div>
+                <div className="profiles-grid">
+                    <ProfileCell />
                 </div>
             </div>
             <div className="right">

@@ -22,54 +22,44 @@ const ProfileCell = () => {
     })
     
     return(
-    <div className="profile-cell-container">
-            {isDesktop &&
-            <Link to="/home/profileinfo"> 
-            <div className="profile-cell-container cell">
-                <div>
-                    <img className="profile-cell-container cell profile-picture" src={imgplaceholder} alt="Image placeholder" />
-                </div>
-                <div className="profile-cell-container top">
-                    <img className="profile-cell-container top added-fav" src={addedfav} alt="Added to favorites" />
-                    <div className="profile-cell-container top gradient">
-                        <div className="profile-cell-container top gradient-container">
-                            <div className="profile-cell-container top gradient-container-group">
-                                <div className="profile-cell-container top gradient-container-group name-connected-group">
-                                    <h3>Name, age</h3>
-                                    <img className="profile-cell-container top gradient-container-group name-connected-group connected" src={connected} alt="User connected" />
-                                </div>
-                                <h3>165m away</h3>
+            <div className="profile-cell">
+                {isDesktop &&
+                <Link to="/home/profileinfo"> 
+                <div className="prf-background">
+                    <img src={imgplaceholder} alt="" className="prf-background-photo" />
+                    <div className="prf-overlay">
+                        <img src={addedfav} alt="" className="prf-added-fav-icon" />
+                        <div className="prf-gradient">
+                            <div className="prf-name-age-connected">
+                            <h3>Name,</h3>
+                            <h3>age</h3>
+                            <img src={connected} alt="" className="prf-connected" />
                             </div>
+                            <h3>123m away</h3>
                         </div>
                     </div>
                 </div>
-            </div>
-            </Link>
-            }
-            {!isDesktop &&
-            <Link to="/profileinfo"> 
-            <div className="profile-cell-container cell">
-                <div>
-                    <img className="profile-cell-container cell profile-picture" src={imgplaceholder} alt="Image placeholder" />
-                </div>
-                <div className="profile-cell-container top">
-                    <img className="profile-cell-container top added-fav" src={addedfav} alt="Added to favorites" />
-                    <div className="profile-cell-container top gradient">
-                        <div className="profile-cell-container top gradient-container">
-                            <div className="profile-cell-container top gradient-container-group">
-                                <div className="profile-cell-container top gradient-container-group name-connected-group">
-                                    <h3>Name, age</h3>
-                                    <img className="profile-cell-container top gradient-container-group name-connected-group connected" src={connected} alt="User connected" />
-                                </div>
-                                <h3>165m away</h3>
+                </Link>
+                }
+                {!isDesktop &&
+                <Link to="/profileinfo"> 
+                <div className="prf-background">
+                    <img src={imgplaceholder} alt="" className="prf-background-photo" />
+                    <div className="prf-overlay">
+                        <img src={addedfav} alt="" className="prf-added-fav-icon" />
+                        <div className="prf-gradient">
+                            <div className="prf-name-age-connected">
+                            <h3>Name,</h3>
+                            <h3>age</h3>
+                            <img src={connected} alt="" className="prf-connected" />
                             </div>
+                            <h3>123m away</h3>
                         </div>
                     </div>
                 </div>
+                </Link>
+                }
             </div>
-            </Link>
-            }
-    </div>
     )
 };
 
