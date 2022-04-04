@@ -12,6 +12,7 @@ import Email from './components/Settings/Email/Email';
 import Password from './components/Settings/Password/Password';
 import BlockedUsers from './components/Settings/BlockedUsers/BlockedUsers';
 import Favorites from './components/Favorites/Favorites';
+import SeenBy from './components/SeenBy/SeenBy';
 
 
 const App = () => {
@@ -59,6 +60,7 @@ const App = () => {
         </>
         }
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/seenby" element={<SeenBy />} />
         <Route path="*" element={<Error />} />
       </Routes> 
     </>
