@@ -41,17 +41,24 @@ const App = () => {
           {isDesktop &&
           <>
             <Route path="/home/profileinfo" element={<ProfileInfo />} />
-            <Route path="/home/settings" element={<Settings />} />
-            <Route path="/home/settings/editprofile" element={<EditProfile />} />
-            <Route path="/home/settings/email" element={<Email />} />
-            <Route path="/home/settings/password" element={<Password />} />
-            <Route path="/home/settings/blocked" element={<BlockedUsers />} />
+            <Route path="/home/editprofile" element={<EditProfile />} />
+            <Route path="/home/favorites" element={<Favorites />} />
+            <Route path="/home/seenby" element={<SeenBy />} />
+            <Route path="/home/messages" element={<Messages />} />
+            <Route path="/home/settings" element={<Settings />}>
+              <Route path="/home/settings/email" element={<Email />} />
+              <Route path="/home/settings/password" element={<Password />} />
+              <Route path="/home/settings/blocked" element={<BlockedUsers />} />
+            </Route>
           </>
           }
         </Route>
         {!isDesktop &&
         <>
           <Route path="/profileinfo" element={<ProfileInfo />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/seenby" element={<SeenBy />} />
+          <Route path="/messages" element={<Messages />} />
           <Route path="/settings" element={<Settings />}>
             <Route path="/settings/editprofile" element={<EditProfile />} />
             <Route path="/settings/email" element={<Email />} />
@@ -60,9 +67,6 @@ const App = () => {
           </Route>
         </>
         }
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/seenby" element={<SeenBy />} />
-        <Route path="/messages" element={<Messages />} />
         <Route path="*" element={<Error />} />
       </Routes> 
     </>

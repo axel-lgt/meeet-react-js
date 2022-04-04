@@ -9,16 +9,13 @@ import backarrow from '../../../assets/mobile/mobile-back-arrow.svg';
 const Email = () => {
     const navigate = useNavigate();
 
-    function handleGoBack() {
-        navigate(-1);
-    }
-
     return(
         <div className="email-block">
+
             <div className="email-container">
                 <div className="email-container header-tab">
                     <div className="email-container header-tab back-arrow">
-                        <img src={backarrow} alt="Go back to settings" onClick={handleGoBack} />
+                        <img src={backarrow} alt="Go back to settings"  />
                     </div>
                     <h4>email@address.com</h4>
                 </div>

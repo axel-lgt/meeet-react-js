@@ -21,16 +21,16 @@ const Menu = () => {
                         <h6>James</h6>
                     </div>
                     <div className="menu-desktop-top-group-tab">
-                        <NavLink to="/editprofile">
+                        <NavLink to="/home/editprofile">
                             <img className="menu-desktop-top-group-tab-edit" src={edit} alt="" />
                         </NavLink>
-                        <NavLink to="/favorites">
+                        <NavLink to="/home/favorites">
                             <img className="menu-desktop-top-group-tab-fav" src={favorites} alt="Favorites icon" />
                         </NavLink>
-                        <NavLink to="/seenby">
+                        <NavLink to="/home/seenby">
                             <img className="menu-desktop-top-group-tab-seenby" src={seenby} alt="Seen by icon" />
                         </NavLink>
-                        <NavLink to="/messages">
+                        <NavLink to="/home/messages">
                             <img className="menu-desktop-top-group-tab-msg" src={messages} alt="Messages icon" />
                         </NavLink>
                         <NavLink to="/home/settings">
