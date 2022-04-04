@@ -1,4 +1,5 @@
-import { Outlet, Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Outlet, Link, useNavigate } from 'react-router-dom'
 
 import './Settings.scss';
 
@@ -30,7 +31,7 @@ const Settings = () => {
                             <h3>Account</h3>
                         </div>
                         <Link to="/settings/email">
-                            <div className="settings-container movable account-tab email">
+                            <div className="settings-container movable account-tab email" >
                                 <h3>Email</h3>
                                 <img src={rightarrow} alt="Go to email settings" />
                             </div>
