@@ -14,6 +14,7 @@ import BlockedUsers from './components/Settings/BlockedUsers/BlockedUsers';
 import Favorites from './components/Favorites/Favorites';
 import SeenBy from './components/SeenBy/SeenBy';
 import Messages from './components/Messages/Messages';
+import Conversation from './components/Messages/Conversation/Conversation';
 
 
 const App = () => {
@@ -67,6 +68,7 @@ const App = () => {
           </Route>
         </>
         }
+        <Route path="/conversation" element={<Conversation />} />
         <Route path="/editprofile" element={<EditProfile />} />
         <Route path="*" element={<Error />} />
       </Routes> 
