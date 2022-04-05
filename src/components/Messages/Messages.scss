@@ -49,6 +49,10 @@ body {
         background: vars.$headerTabColor;
         justify-content: center;
         align-items: center;
+
+        .modal-cross {
+            display: none;
+        }
     }
 
     .messages-list {
@@ -106,4 +110,54 @@ body {
             }
         }
     }
+}
+
+@media screen and (min-width: 1200px) {
+    .messages-block {
+        position: fixed;
+        width: 800px;
+        height: 600px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        background: white;
+        padding-bottom: 0;
+
+        .messages-container {
+            width: 100%;
+
+            .messages-header-tab {
+                background: white;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+
+                .modal-cross {
+                    display: flex;
+                    position: absolute;
+                    height: 32px;
+                    width: 32px;
+                    right: 10px;
+                    top: 10px;
+                }
+            }
+
+            .messages-list {
+                width: 250px;
+                height: 525px;
+                background: white;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                margin-left: 20px;
+                border-radius: 10px;
+
+                .messages-item {
+                    height: 50px;
+                    padding: 0.5em;
+                }
+            }
+        }
+    }
+
+        
 }

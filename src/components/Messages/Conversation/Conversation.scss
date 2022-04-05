@@ -78,7 +78,7 @@ body {
     }
 
     .conversation-content {
-        padding: 3em 1em 3em 1em;
+        padding: 3em 1em;
         display: flex;
         flex-direction: column;
 
@@ -154,6 +154,46 @@ body {
         img {
             width: 28px;
             height: 28px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .conversation-block {
+        position: absolute;
+        background: white;
+        padding-bottom: 0;
+        width: 480px;
+        height: 530px;
+        bottom: 20px;
+        right: 20px;
+        overflow-y: scroll;
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 10px;
+
+        .conversation-container {
+            width: 100%;
+
+            .conversation-header-tab {
+                height: 40px;
+                width: 480px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .conversation-content {
+                padding: 3em 1em;
+                p {
+                    font-size: 0.9em;
+                }
+            }
+
+            .conversation-input {
+                left: 43%;
+                transform: none;
+                width: 400px;
+                bottom: 2em;
+            }
         }
     }
 }

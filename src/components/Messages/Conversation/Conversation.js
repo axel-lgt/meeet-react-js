@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 
 import './Conversation.scss';
 
@@ -8,13 +9,19 @@ import block from '../../../assets/profilecell/block.svg';
 import sendmessage from '../../../assets/send-message.png';
 
 const Conversation = () => {
+
+    const navigate = useNavigate();
+
+    const handleGoBack = () => {
+        navigate(-1);
+    }
     
     return(
         <div className="conversation-block">
             <div className="conversation-container">
                 <div className="conversation-header-tab">
                     <div className="back-arrow">
-                        <img src={backarrow} alt="Return to messages" />
+                        <img src={backarrow} alt="Return to messages" onClick={handleGoBack} />
                     </div>
                     <div className="userphoto-username-age-group">
                         <img src={imgplaceholder} alt="" />

@@ -45,7 +45,9 @@ const App = () => {
             <Route path="/home/editprofile" element={<EditProfile />} />
             <Route path="/home/favorites" element={<Favorites />} />
             <Route path="/home/seenby" element={<SeenBy />} />
-            <Route path="/home/messages" element={<Messages />} />
+            <Route path="/home/messages" element={<Messages />}>
+              <Route path="/home/messages/conversation" element={<Conversation />} />
+            </Route>
             <Route path="/home/settings" element={<Settings />}>
               <Route path="/home/settings/email" element={<Email />} />
               <Route path="/home/settings/password" element={<Password />} />
