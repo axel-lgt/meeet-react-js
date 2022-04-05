@@ -1,91 +1,95 @@
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './EditProfile.scss';
-import Settings from '../Settings/Settings';
 
 import backarrow from '../../assets/mobile/mobile-back-arrow.svg';
 import imgplaceholder from '../../assets/profilecell/avatar-placeholder.png';
 import imgupload from '../../assets/profilecell/image-upload.png';
+import cross from '../../assets/profilecell/cross.svg';
 
 const EditProfile = () => {
+    const navigate = useNavigate();
 
-    const [showSettings, setShowSettings] = useState(false);
-    const [showEditProfile, setShowEditProfile] = useState(true);
-
-    const settingsHandler = () => {
-        setShowEditProfile(false);
-        setShowSettings(true);
+    const handleGoBack = () => {
+        navigate(-1)
     }
+
+    const handleCross = () => {
+        navigate(-1)
+    }
+    
 
     return(
         <div className="edit-profile-block">
-            { showEditProfile &&
             <div className="edit-profile-container">
-                <div className="edit-profile-container header-tab">
-                    <div className="edit-profile-container header-tab back-arrow">
-                        <img className="back-arrow-img" src={backarrow} alt="Return to last page" onClick={settingsHandler} />
+                <div className="header-tab">
+                    <div className="back-arrow">
+                        <img className="back-arrow-img" src={backarrow} alt="Return to last page" onClick={handleGoBack} />
+                    </div>
+                    <div className="modal-cross">
+                        <img className="modal-cross-img" src={cross} alt="Close this modal" onClick={handleCross} />
                     </div>
                     <h2>Edit profile</h2>
                 </div>
-                <div className="edit-profile-container picture-gallery-container">
-                    <div className="edit-profile-container picture-gallery">
-                        <div className="edit-profile-container pic1">
+                <div className="picture-gallery-container">
+                    <div className="picture-gallery">
+                        <div className="pic1">
                             <img src={imgplaceholder} alt="" />
-                            <div className="edit-profile-container imgupload">
+                            <div className="imgupload">
                                 <img src={imgupload} alt="" />
                             </div>
                         </div>
-                        <div className="edit-profile-container pic2">
+                        <div className="pic2">
                             <img src={imgplaceholder} alt="" />
                         </div>
-                        <div className="edit-profile-container pic3">
+                        <div className="pic3">
                             <img src={imgplaceholder} alt="" />
                         </div>
-                        <div className="edit-profile-container pic4">
+                        <div className="pic4">
                             <img src={imgplaceholder} alt="" />
                         </div>
-                        <div className="edit-profile-container pic5">
+                        <div className="pic5">
                             <img src={imgplaceholder} alt="" />
                         </div>
                     </div>
                 </div>
-                <div className="edit-profile-container name-age-header">
-                    <h3 className="edit-profile-container name-age-header name">Name</h3>
-                    <h3 className="edit-profile-container name-age-header age">, age</h3>
+                <div className="name-age-header">
+                    <h3 className="name-age-header name">Name</h3>
+                    <h3 className="name-age-header age">, age</h3>
                 </div>
-                <div className="edit-profile-container info-block info">
-                    <div className="edit-profile-container info-block info description">
+                <div className="info-block">
+                    <div className="info description">
                         <h4>Description</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eaque tempora dignissimos quo omnis, est id ut esse quia nihil quis architecto amet iure repudiandae maiores mollitia saepe corrupti accusantium!</p>
                     </div>
-                    <div className="edit-profile-container info-block info interests">
+                    <div className="info interests">
                         <h4>What are my interests?</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptate natus voluptatum, deleniti autem nobis nemo, tempora molestias doloribus eos et eum ea unde earum consectetur eligendi laboriosam magnam eaque.</p>
                     </div>
-                    <div className="edit-profile-container info-block info table">
+                    <div className="info table">
                         <h4>Information</h4>
-                        <div className="edit-profile-container info-block info table-details">
-                            <div className="edit-profile-container info-block info table-details row height">
+                        <div className="table-details">
+                            <div className="row height">
                                 <h5>Height</h5>
                                 <span>165cm</span>
                             </div>
-                            <div className="edit-profile-container info-block info table-details row weight">
+                            <div className="row weight">
                                 <h5>Weight</h5>
                                 <span>56kg</span>
                             </div>
-                            <div className="edit-profile-container info-block info table-details row ethnicity">
+                            <div className="row ethnicity">
                                 <h5>Ethnicity</h5>
                                 <span>Latina</span>
                             </div>
-                            <div className="edit-profile-container info-block info table-details row gender">
+                            <div className="row gender">
                                 <h5>Gender</h5>
                                 <span>Cis woman</span>
                             </div>
-                            <div className="edit-profile-container info-block info table-details row pronouns">
+                            <div className="row pronouns">
                                 <h5>Pronouns</h5>
                                 <span>She/They</span>
                             </div>
-                            <div className="edit-profile-container info-block info table-details row lookingfor">
+                            <div className="row lookingfor">
                                 <h5>Looking for</h5>
                                 <span>Relationships</span>
                             </div>
@@ -93,10 +97,6 @@ const EditProfile = () => {
                     </div>
                 </div>
             </div>
-            }
-            { showSettings && 
-                <Settings />
-            }
         </div>
     )
 };

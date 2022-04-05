@@ -67,6 +67,7 @@ const App = () => {
           </Route>
         </>
         }
+        <Route path="/editprofile" element={<EditProfile />} />
         <Route path="*" element={<Error />} />
       </Routes> 
     </>
