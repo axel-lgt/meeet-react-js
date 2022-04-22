@@ -1,4 +1,6 @@
 import { Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from "axios";
 
 import ProfileCell from '../ProfileCell/ProfileCell';
 import filter from '../../assets/filters/filter.png';
@@ -13,6 +15,67 @@ import './Home.scss';
 
 const Home = () => {
 
+    const [profileGridList, setProfileGridList] = useState([])
+
+    useEffect(() => {
+        axios.get("http://localhost:4000/user")
+        .then((response) => {
+            setProfileGridList(
+                response.data.map((data) => {
+                    return {
+                        id: data.id,
+                        username: data.name,
+                        age: data.age
+                    }
+                })
+            )
+        })
+    }, [])
+
+    // useEffect(() => {
+    //     async function fetchUserList() {
+            
+    //         try {
+    //             await axios.get("http://localhost:4000/user")
+    //             .then((response) => {
+    //                 console.log(response.data);
+    //                 const userData = response.data;
+
+    //                 userData.map((user) => {
+    //                     return{
+    //                                 id: user.id,
+    //                                 name: user.name,
+    //                                 age: user.age,
+    //                             }
+    //                 })
+    //                 // const userList = {
+    //                 //     id: response.data.id,
+    //                 //     name: response.data.name,
+    //                 //     age: response.data.age,
+    //                 // }
+        
+    //                 // const userList = response.data.map((data) => {
+    //                 //     return{
+    //                 //         id: data.id,
+    //                 //         name: data.name,
+    //                 //         age: data.age,
+    //                 //     }
+    //                 // })
+        
+    //                 // console.log(userList);
+
+    //                 console.log(userData);
+        
+    //                 // setProfileGridList.push(userList);
+    //             })
+    //         } catch(err) {
+    //             console.log(err);
+    //         }
+    //     }
+    //     fetchUserList()
+    // }, [])
+
+    console.log(profileGridList);
     
 
     return(
@@ -21,8 +84,18 @@ const Home = () => {
             <div className="left">
                 <h1>Hi <em>James</em>! You are currently located in <em>Paris</em>.</h1>
                 <div className="map-reduced"></div>
-                <div className="profiles-grid">
-                    <ProfileCell />
+                <div>
+                </div>
+                <div className="profiles-grid"> 
+                {console.log(profileGridList)}
+                { profileGridList.map((profile) => {
+                        <ProfileCell profile={profile} key={profile.id} />
+                        // <div key={profile.id}>
+                        //     <p>{profile.name}</p>
+                        //     <p>{profile.age}</p>
+                        // </div>
+                    })}
+                    
                 </div>
             </div>
             <div className="right">

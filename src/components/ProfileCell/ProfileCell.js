@@ -8,7 +8,7 @@ import connected from '../../assets/profilecell/connected.svg';
 import addedfav from '../../assets/profilecell/added-favorite.png';
 import notfavorite from '../../assets/profilecell/not-added-favorite.png';
 
-const ProfileCell = () => {
+const ProfileCell = ({ profile, key }) => {
 
     const [isDesktop, setDesktop] = useState(window.innerWidth > 1200);
 
@@ -20,10 +20,14 @@ const ProfileCell = () => {
         window.addEventListener('resize', updateMedia);
         return () => window.removeEventListener('resize', updateMedia);
     })
+
+    console.log({profile});
+
+
     
     return(
-            <div className="profile-cell">
-                {isDesktop &&
+            <div className="profile-cell" key={profile.id}>
+
                 <Link to="/home/profileinfo"> 
                 <div className="prf-background">
                     <img src={imgplaceholder} alt="" className="prf-background-photo" />
@@ -31,8 +35,8 @@ const ProfileCell = () => {
                         <img src={addedfav} alt="" className="prf-added-fav-icon" />
                         <div className="prf-gradient">
                             <div className="prf-name-age-connected">
-                            <h3>Name,</h3>
-                            <h3>age</h3>
+                            <h3>{profile.name},</h3>
+                            <h3>{profile.age}</h3>
                             <img src={connected} alt="" className="prf-connected" />
                             </div>
                             <h3>123m away</h3>
@@ -40,8 +44,8 @@ const ProfileCell = () => {
                     </div>
                 </div>
                 </Link>
-                }
-                {!isDesktop &&
+
+                {/* {!isDesktop &&
                 <Link to="/profileinfo"> 
                 <div className="prf-background">
                     <img src={imgplaceholder} alt="" className="prf-background-photo" />
@@ -58,7 +62,7 @@ const ProfileCell = () => {
                     </div>
                 </div>
                 </Link>
-                }
+                } */}
             </div>
     )
 };

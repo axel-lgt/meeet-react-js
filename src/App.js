@@ -38,7 +38,7 @@ const App = () => {
       {!isLandingPage && <Menu />}
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/home" element={<Home />}>
+        <Route path="/home" element={<Home />} >
           {isDesktop &&
           <>
             <Route path="/home/profileinfo" element={<ProfileInfo />} />
