@@ -9,7 +9,23 @@ const initialState = {
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
     const response = await axios.get('http://localhost:4000/user')
-    return response.data
+    // Only return user info, NOT email and password
+    return response.data.map((data) => {
+        return {
+            id: data.id,
+            position: data.position,
+            name: data.name,
+            age: data.age,
+            description: data.description,
+            interests: data.interests,
+            height: data.height,
+            weight: data.weight,
+            ethnicity: data.ethnicity,
+            gender: data.gender,
+            pronouns: data.pronouns,
+            looking_for: data.looking_for
+        }
+    })
 })
 
 const usersSlice = createSlice({
