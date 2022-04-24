@@ -15,22 +15,20 @@ import './Home.scss';
 
 const Home = () => {
 
-    const [profileGridList, setProfileGridList] = useState([])
-
-    useEffect(() => {
-        axios.get("http://localhost:4000/user")
-        .then((response) => {
-            setProfileGridList(
-                response.data.map((data) => {
-                    return {
-                        id: data.id,
-                        username: data.name,
-                        age: data.age
-                    }
-                })
-            )
-        })
-    }, [])
+    // useEffect(() => {
+    //     axios.get("http://localhost:4000/user")
+    //     .then((response) => {
+    //         setProfileGridList(
+    //             response.data.map((data) => {
+    //                 return {
+    //                     id: data.id,
+    //                     username: data.name,
+    //                     age: data.age
+    //                 }
+    //             })
+    //         )
+    //     })
+    // }, [])
 
     // useEffect(() => {
     //     async function fetchUserList() {
