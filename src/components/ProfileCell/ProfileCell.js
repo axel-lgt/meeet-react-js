@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { selectAllUsers, fetchUsers } from '../../features/users/usersSlice'
 
 import './ProfileCell.scss';
 
@@ -8,7 +10,12 @@ import connected from '../../assets/profilecell/connected.svg';
 import addedfav from '../../assets/profilecell/added-favorite.png';
 import notfavorite from '../../assets/profilecell/not-added-favorite.png';
 
-const ProfileCell = ({ profile, key }) => {
+const ProfileCell = () => {
+    const dispatch = useDispatch();
+    const users = useSelector(selectAllUsers)
+
+    const usersStatus = useSelector(state => state.users.status)
+    const error = useSelector(state => state.users.error)
 
     const [isDesktop, setDesktop] = useState(window.innerWidth > 1200);
 
@@ -21,13 +28,15 @@ const ProfileCell = ({ profile, key }) => {
         return () => window.removeEventListener('resize', updateMedia);
     })
 
-    console.log({profile});
+    useEffect(() => {
+        if (usersStatus === 'idle') {
+            dispatch(fetchUsers());
+        }
+    }, [usersStatus, dispatch])
 
-
-    
-    return(
-            <div className="profile-cell" key={profile.id}>
-
+    const renderedUsers = users.map(user => {
+        return (
+            <div className="profile-cell" key={user.id}>
                 <Link to="/home/profileinfo"> 
                 <div className="prf-background">
                     <img src={imgplaceholder} alt="" className="prf-background-photo" />
@@ -35,8 +44,8 @@ const ProfileCell = ({ profile, key }) => {
                         <img src={addedfav} alt="" className="prf-added-fav-icon" />
                         <div className="prf-gradient">
                             <div className="prf-name-age-connected">
-                            <h3>{profile.name},</h3>
-                            <h3>{profile.age}</h3>
+                            <h3>{user.name},</h3>
+                            <h3>{user.age}</h3>
                             <img src={connected} alt="" className="prf-connected" />
                             </div>
                             <h3>123m away</h3>
@@ -44,26 +53,15 @@ const ProfileCell = ({ profile, key }) => {
                     </div>
                 </div>
                 </Link>
-
-                {/* {!isDesktop &&
-                <Link to="/profileinfo"> 
-                <div className="prf-background">
-                    <img src={imgplaceholder} alt="" className="prf-background-photo" />
-                    <div className="prf-overlay">
-                        <img src={addedfav} alt="" className="prf-added-fav-icon" />
-                        <div className="prf-gradient">
-                            <div className="prf-name-age-connected">
-                            <h3>Name,</h3>
-                            <h3>age</h3>
-                            <img src={connected} alt="" className="prf-connected" />
-                            </div>
-                            <h3>123m away</h3>
-                        </div>
-                    </div>
-                </div>
-                </Link>
-                } */}
             </div>
+        )
+    })
+
+    
+    return(
+        <>
+            {renderedUsers}
+        </>
     )
 };
 

@@ -73,7 +73,7 @@ const Home = () => {
     //     fetchUserList()
     // }, [])
 
-    console.log(profileGridList);
+    // console.log(profileGridList);
     
 
     return(
@@ -85,15 +85,7 @@ const Home = () => {
                 <div>
                 </div>
                 <div className="profiles-grid"> 
-                {console.log(profileGridList)}
-                { profileGridList.map((profile) => {
-                        <ProfileCell profile={profile} key={profile.id} />
-                        // <div key={profile.id}>
-                        //     <p>{profile.name}</p>
-                        //     <p>{profile.age}</p>
-                        // </div>
-                    })}
-                    
+                    <ProfileCell/>
                 </div>
             </div>
             <div className="right">
