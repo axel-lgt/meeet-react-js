@@ -28,6 +28,10 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
     })
 })
 
+export const createUser = createAsyncThunk('users/createUser', async () => {
+  const response = await axios.post('http://localhost:4000/user')
+})
+
 const usersSlice = createSlice({
     name: 'users',
     initialState,

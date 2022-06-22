@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { useAuth } from './firebase-config';
+
 import './styles/index.scss';
+
 import Landing from './components/Landing/Landing';
 import Menu from './components/Menu/Menu';
 import Error from './components/Error/Error';
@@ -18,8 +21,10 @@ import Conversation from './components/Messages/Conversation/Conversation';
 
 
 const App = () => {
-
   const [isDesktop, setDesktop] = useState(window.innerWidth > 1200);
+  const currentUser = useAuth();
+
+  console.log(currentUser?.email);
 
   const updateMedia = () => {
       setDesktop(window.innerWidth > 1200);
