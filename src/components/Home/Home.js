@@ -88,6 +88,16 @@ const Home = () => {
                 </div>
                 <div className="profiles-grid"> 
                     <ProfileCell/>
+                    <ProfileCell/>
+                    <ProfileCell/>
+                    <ProfileCell/>
+                    <ProfileCell/>
+                    <ProfileCell/>
+                    <ProfileCell/>
+                    <ProfileCell/>
+                    <ProfileCell/>
+                    <ProfileCell/>
+                    <ProfileCell/>
                 </div>
             </div>
             <div className="right">

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signUp } from '../../firebase-config';
+import { signUp, createNewUser, useAuth } from '../../firebase-config';
 
 import './SignUp.scss';
 
@@ -8,6 +8,7 @@ import SignIn from '../SignIn/SignIn';
 
 const SignUp = () => {
     let navigate = useNavigate();
+    const currentUser = useAuth();
 
     const [loading, setLoading] = useState(false);
     const [showError, setShowError] = useState('');
@@ -29,12 +30,26 @@ const SignUp = () => {
 
       try {
         setShowError('')
-        await signUp(emailRef.current.value, passwordRef.current.value);
+        const response = await signUp(emailRef.current.value, passwordRef.current.value);
+        console.log(response.user);
+
+        const userId = response.user.uid;
+        let payload = {
+          name: response.user.email
+        }
+
+        await createNewUser(userId, payload);
         navigate("/home", { replace: true });
       } catch(error) {
         console.log(error);
       }
-      setLoading(false);
+
+      // try {
+      //   await createNewUser()
+      // } catch {
+
+      // }
+     setLoading(false);
     }
 
     const handleSignIn = () => {

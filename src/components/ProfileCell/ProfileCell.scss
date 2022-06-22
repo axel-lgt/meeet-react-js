@@ -20,8 +20,9 @@ body {
     }
 
         .profile-cell {
-            background: green;
+            // background: green;
             border: 1px solid black;
+            border-radius: 5px;
 
             .prf-background {
                 width: 100%;
@@ -32,6 +33,7 @@ body {
                     object-fit: cover;
                     width: 100%;
                     height: 100%;
+                    border-radius: 5px;
                 }
 
                 .prf-overlay {
@@ -39,6 +41,7 @@ body {
                     top: 0;
                     width: 100%;
                     height: 100%;
+                    border-radius: 5px;
 
                     .prf-added-fav-icon {
                         position: absolute;
