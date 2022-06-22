@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from '@firebase/firestore';
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from '@firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, sendPasswordResetEmail, updateEmail } from '@firebase/auth';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -27,6 +27,26 @@ export function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password)
 }
 
+export function signIn(email, password) {
+    return signInWithEmailAndPassword(auth, email, password)
+}
+
+export function logOut() {
+    return signOut(auth);
+}
+
+export function resetPassword(email) {
+    return sendPasswordResetEmail(auth, email)
+}
+
+export function changeEmail(email) {
+    return updateEmail(auth.currentUser, email)
+}
+
+// export function deleteAccount() {
+//     return currentUser.delete();
+// }
+ 
 // Custom Hook to check if user is logged in
 export function useAuth() {
     const [currentUser, setCurrentUser] = useState();

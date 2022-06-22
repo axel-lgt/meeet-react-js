@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useNavigate } from 'react-router-dom'
+import { logOut, useAuth } from '../../firebase-config';
 
 import './Settings.scss';
 
@@ -8,8 +9,9 @@ import edit from '../../assets/navbar/editprofile.png';
 import rightarrow from '../../assets/right-arrow.png';
 
 const Settings = () => {
-
+    let navigate = useNavigate();
     const [isDesktop, setDesktop] = useState(window.innerWidth > 1200);
+    const currentUser = useAuth();
 
     const updateMedia = () => {
         setDesktop(window.innerWidth > 1200);
@@ -19,6 +21,19 @@ const Settings = () => {
         window.addEventListener('resize', updateMedia);
         return () => window.removeEventListener('resize', updateMedia);
     })
+
+    const handleLogOff = async () => {
+        try {
+            await logOut()
+        } catch(error) {
+            console.log(error);
+        }
+        navigate("/", {replace: true})
+    }
+
+    const handleDeleteAccount = () => {
+        currentUser.delete()
+    }
 
     return (
         <div className="settings-block">
@@ -121,8 +136,8 @@ const Settings = () => {
                         </div>
         
                         <div className="settings-container movable logoff-delete-group">
-                            <button className="log-off-btn">Log off</button>
-                            <button className="delete-account-btn">Delete account</button>
+                            <button className="log-off-btn" onClick={handleLogOff}>Log off</button>
+                            <button className="delete-account-btn" onClick={handleDeleteAccount}>Delete account</button>
                         </div>
                     </div>
                 </div>

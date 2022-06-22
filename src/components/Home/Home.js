@@ -1,4 +1,6 @@
 import { Outlet } from 'react-router-dom';
+import { useAuth } from '../../firebase-config';
+import { Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from "axios";
 
@@ -14,7 +16,7 @@ import addedfav from '../../assets/profilecell/added-favorite.png';
 import './Home.scss';
 
 const Home = () => {
-
+    const currentUser = useAuth();
     // useEffect(() => {
     //     axios.get("http://localhost:4000/user")
     //     .then((response) => {
@@ -80,7 +82,7 @@ const Home = () => {
         <>
         <div className="home-container">
             <div className="left">
-                <h1>Hi <em>James</em>! You are currently located in <em>Paris</em>.</h1>
+                <h1>Hi <em>{currentUser?.email}</em>! You are currently located in <em>Paris</em>.</h1>
                 <div className="map-reduced"></div>
                 <div>
                 </div>

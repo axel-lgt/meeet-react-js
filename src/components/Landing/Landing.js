@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import { useAuth } from '../../firebase-config';
 
 import './Landing.scss';
 import SignUp from '../SignUp/SignUp';
@@ -9,6 +11,7 @@ import meeet from '../../assets/meeet-logo.svg';
 import rightarrow from '../../assets/right-arrow.png'
 
 const Landing = () => {
+  const currentUser = useAuth();
 
   const [showLandingInfo, setShowLandingInfo] = useState(true);
   const [showSignUp, setShowSignUp] = useState(false);
@@ -30,6 +33,7 @@ const Landing = () => {
 
   return (
     <div className="landing-page-container">
+      { currentUser && <Navigate to="/home" /> }
       <div className="landing-page-container header-banner">
         <img className="landing-page-container header-banner-fav" src={favimg} alt="Heart icon" />
         <img className="landing-page-container header-banner-msg" src={msgimg} alt="Message icon" />
