@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signUp, createNewUser, useAuth } from '../../firebase-config';
+import { signUp, createNewUser } from '../../firebase-config';
 
 import './SignUp.scss';
 
@@ -8,7 +8,6 @@ import SignIn from '../SignIn/SignIn';
 
 const SignUp = () => {
     let navigate = useNavigate();
-    const currentUser = useAuth();
 
     const [loading, setLoading] = useState(false);
     const [showError, setShowError] = useState('');

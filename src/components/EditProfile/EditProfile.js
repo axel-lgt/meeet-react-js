@@ -1,4 +1,6 @@
+import { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth, updateProfile, getProfile } from '../../firebase-config';
 
 import './EditProfile.scss';
 
@@ -9,6 +11,43 @@ import cross from '../../assets/profilecell/cross.svg';
 
 const EditProfile = () => {
     const navigate = useNavigate();
+    const currentUser = useAuth();
+
+    const nameRef = useRef();
+    const ageRef = useRef();
+    const descriptionRef = useRef();
+    const interestsRef = useRef();
+    const informationRef = useRef();
+
+    const handleUpdateProfile = async e => {
+        e.preventDefault();
+
+        try {
+            const userId = currentUser?.uid;
+            const payload = {
+                
+                description: descriptionRef.current.value,
+                interests: interestsRef.current.value
+            }
+
+            await updateProfile(userId, payload)
+        } catch(error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        if(!currentUser?.uid) {
+            return
+        }
+        const userId = currentUser?.uid;
+        
+        const fetchProfile = async () => {
+            const response = await getProfile(userId)
+        }
+
+        fetchProfile()
+    }, [currentUser])
 
     const handleGoBack = () => {
         navigate(-1)
@@ -17,7 +56,6 @@ const EditProfile = () => {
     const handleCross = () => {
         navigate(-1)
     }
-    
 
     return(
         <div className="edit-profile-block">
@@ -54,17 +92,18 @@ const EditProfile = () => {
                     </div>
                 </div>
                 <div className="name-age-header">
-                    <h3 className="name-age-header name">Name</h3>
-                    <h3 className="name-age-header age">, age</h3>
+                    <h3 ref={nameRef} className="name-age-header name">Name</h3>
+                    <h3 ref={ageRef} className="name-age-header age">, age</h3>
                 </div>
+                <button onClick={handleUpdateProfile}>Save</button>
                 <div className="info-block">
                     <div className="info description">
                         <h4>Description</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eaque tempora dignissimos quo omnis, est id ut esse quia nihil quis architecto amet iure repudiandae maiores mollitia saepe corrupti accusantium!</p>
+                        <textarea ref={descriptionRef}></textarea>
                     </div>
                     <div className="info interests">
                         <h4>What are my interests?</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptate natus voluptatum, deleniti autem nobis nemo, tempora molestias doloribus eos et eum ea unde earum consectetur eligendi laboriosam magnam eaque.</p>
+                        <textarea ref={interestsRef}></textarea>
                     </div>
                     <div className="info table">
                         <h4>Information</h4>

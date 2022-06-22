@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, setDoc, doc } from '@firebase/firestore';
+import { getFirestore, collection, setDoc, updateDoc, getDoc, doc } from '@firebase/firestore';
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, sendPasswordResetEmail, updateEmail } from '@firebase/auth';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -49,6 +49,22 @@ export function resetPassword(email) {
 
 export function changeEmail(email) {
     return updateEmail(auth.currentUser, email)
+}
+
+export async function getProfile(userId) {
+    try {
+        await getDoc(doc(db, 'users', userId))
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+export async function updateProfile(userId, payload) {
+    try {
+        await updateDoc(doc(db, 'users', userId), payload)
+    } catch(error) {
+        console.log(error);
+    }
 }
 
 // export function deleteAccount() {
