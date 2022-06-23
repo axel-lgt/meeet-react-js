@@ -1,6 +1,8 @@
 import { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth, updateProfile, getProfile } from '../../firebase-config';
+import { useDispatch } from 'react-redux'
+import { editProfile } from '../../features/users/usersSlice'
 
 import './EditProfile.scss';
 
@@ -11,6 +13,7 @@ import cross from '../../assets/profilecell/cross.svg';
 
 const EditProfile = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const currentUser = useAuth();
 
     const nameRef = useRef();
@@ -30,7 +33,9 @@ const EditProfile = () => {
                 interests: interestsRef.current.value
             }
 
-            await updateProfile(userId, payload)
+            dispatch(editProfile(userId, payload))
+            console.log(userId);
+            console.log(payload);
         } catch(error) {
             console.log(error);
         }

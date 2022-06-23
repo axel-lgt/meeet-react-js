@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { updateDoc, doc } from '@firebase/firestore';
+import { db } from '../../firebase-config'
 import axios from 'axios'
 
 const initialState = {
@@ -26,6 +28,17 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
             looking_for: data.looking_for
         }
     })
+})
+
+export const editProfile = createAsyncThunk('users/editProfile', async (userId, payload) => {
+  try {
+    console.log(userId);
+    console.log(payload);
+    const response = await updateDoc(doc(db, 'users', userId), payload)
+    console.log(response);
+  } catch(error) {
+    console.log(error);
+  }
 })
 
 export const createUser = createAsyncThunk('users/createUser', async () => {

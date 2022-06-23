@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signUp, createNewUser } from '../../firebase-config';
+import { useDispatch } from 'react-redux';
+import { editProfile } from '../../features/users/usersSlice'
 
 import './SignUp.scss';
 
