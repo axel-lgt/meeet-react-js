@@ -1,5 +1,5 @@
 # :purple_heart: Welcome to the Meeet repository! :people_hugging:
-🚀 Version 0.1 ([English](https://github.com/axel-lgt/meeet-react-js/blob/master/README.md), [Français](https://github.com/axel-lgt/meeet-react-js/blob/master/README.fr.md))
+🚀 Version 0.1 ([English](https://github.com/axel-lgt/meeet-react-js/blob/main/README.md), [Français](https://github.com/axel-lgt/meeet-react-js/blob/main/README.fr.md))
 
 <p align="center"><img src="https://i.ibb.co/FxBHxCt/meeet-cover.png" alt="meeet-cover" border="0" style="height: 400px"></p>
 
